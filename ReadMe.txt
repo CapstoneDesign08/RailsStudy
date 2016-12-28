@@ -1,6 +1,0 @@
-#Change sql password in database.yml
-# $ rake db:create
-# $ rake db:migrate
-# $ bin/rails s
-# localhost:3000/posts, hongs, jeons
-
