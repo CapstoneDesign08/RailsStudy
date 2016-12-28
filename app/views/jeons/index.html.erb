@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>이미지 게시판</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>작성자</th>
+      <th>제목</th>
+      <th>설명</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jeons.each do |jeon| %>
+      <tr>
+        <td><%= jeon.name %></td>
+        <td><%= jeon.title %></td>
+        <td><%= jeon.content %></td>
+        <td><%= link_to '보기', jeon %></td>
+        <td><%= link_to '수정', edit_jeon_path(jeon) %></td>
+        <td><%= link_to '삭제', jeon, method: :delete, data: { confirm: '정말 삭제하십니까?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '추가하기', new_jeon_path %>

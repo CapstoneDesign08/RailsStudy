@@ -1,0 +1,37 @@
+<%= form_for(jeon) do |f| %>
+  <% if jeon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(jeon.errors.count, "error") %> prohibited this jeon from being saved:</h2>
+
+      <ul>
+      <% jeon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :작성자 %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :제목 %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :설명 %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :사진 %><br>
+    <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg, image/bmp' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :posts
-  resources :posts
-  resources :posts
- root :to => "home#index"
+  resources :jeons
+  resources :hongs
+  get '/pages', to: 'pages#index'
+  get '/jeons' , to: 'jeons#index'
+  get '/hongs' , to: 'hongs#index'
+  root :to => "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

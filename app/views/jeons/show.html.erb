@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>작성자:</strong>
+  <%= @jeon.name %>
+</p>
+
+<p>
+  <strong>제목:</strong>
+  <%= @jeon.title %>
+</p>
+
+<p>
+  <strong>설명:</strong>
+  <%= @jeon.content %>
+</p>
+
+<p>
+  <strong>사진:</strong>
+  <%= image_tag("#{@jeon.image}") %>
+</p>
+
+<%= link_to '수정', edit_jeon_path(@jeon) %> |
+<%= link_to '뒤로', jeons_path %>
